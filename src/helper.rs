@@ -25,7 +25,7 @@ pub fn print_tokens_list() {
     println!("EQ, LT, GT, NEQ, NLT, NGT");
     println!("NOT, AND, OR");
     println!("ASSIGN");
-    println!("FUNC, LET, IF, ELSE, WHILE, PRINT");
+    println!("FUNC, LET, IF, ELSE, WHILE, PRINT, RETURN");
     println!("ID");
     println!("TYPE_INT32, TYPE_FLT32, TYPE_CHAR");
     println!("LIT_INT32, LIT_FLT32, LIT_CHAR, LIT_STRING");
