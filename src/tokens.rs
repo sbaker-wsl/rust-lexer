@@ -41,6 +41,7 @@ pub enum Token {
     ELSE,
     WHILE,
     PRINT,
+    RETURN,
     // Identifiers
     ID(String),
     // Basic Types
@@ -102,5 +103,6 @@ pub enum LexerState {
     L_F32,
     L_CH,
     L_STR,
+    RET,
     END
 }

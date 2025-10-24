@@ -276,12 +276,12 @@ impl Lexer {
                                     self.curr_token = tokens::Token::PRINT;
                                 }
 
-                                "i32" => {
+                                "int32" => {
                                     self.curr_state = tokens::LexerState::T_I32;
                                     self.curr_token = tokens::Token::TYPE_INT32;
                                 }
 
-                                "f32" => {
+                                "flt32" => {
                                     self.curr_state = tokens::LexerState::T_F32;
                                     self.curr_token = tokens::Token::TYPE_FLT32;
                                 }
@@ -289,6 +289,11 @@ impl Lexer {
                                 "char" => {
                                     self.curr_state = tokens::LexerState::T_CH;
                                     self.curr_token = tokens::Token::TYPE_CHAR;
+                                }
+
+                                "return" => {
+                                    self.curr_state = tokens::LexerState::RET;
+                                    self.curr_token = tokens::Token::RETURN;
                                 }
 
                                 _ => {
@@ -423,6 +428,7 @@ impl Lexer {
         while self.curr_state != tokens::LexerState::END {
             self.advance();
             if self.curr() == tokens::Token::EOI {
+                println!();
                 print!("{:?}", self.curr());
             } else {
                 print!("{:?}, ", self.curr());
